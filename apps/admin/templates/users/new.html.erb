@@ -1,0 +1,16 @@
+<h1>New User</h1>
+
+<form id="new-user" method="post" action="/admin/users">
+  <p class="required">
+    <label for="name">Name</label>
+    <input type="text" name="user[name]" value="<%= user.name %>" placeholder="Name" required>
+  </p>
+  <p>
+    <label for="age">Age</label>
+    <input type="text" name="user[age]" value="<%= user.age %>" placeholder="Age" required>
+  </p>
+
+  <p class="buttons">
+    <button type="submit">Create</button> or <a href="/admin/users">Back</a>
+  </p>
+</form>
