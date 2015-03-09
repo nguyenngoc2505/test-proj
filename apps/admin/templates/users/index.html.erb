@@ -1,6 +1,6 @@
 <h1>List Users</h1>
 <% users.each.with_index(1) do |user, index| %>
-  <%= "#{index}. #{user.name},  #{user.age} \t" %> &nbsp;&nbsp;| &nbsp;<a href=<%= "/admin/user/#{user.id}/edit" %>>Edit</a></br>
+  <%= "#{index}. #{user.name},  #{user.age} \t" %> &nbsp;&nbsp;| &nbsp; <a href=<%= "/admin/user/#{user.id}/edit" %>>Edit</a></br>
 <% end %>
 
 </br>
