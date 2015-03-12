@@ -1,0 +1,12 @@
+<h1>List Posts</h1>
+<% posts.each.with_index(1) do |post, index| %>
+  <form id="delete-post-<%= post.id %>" method="post" action="/admin/posts/<%= post.id %>">
+    <input type="hidden" name="_method" value="delete" />
+  </form>
+
+  <%= index %>. &nbsp;&nbsp;&nbsp;<a href=<%= "/posts/#{post.id}" %>><%= post.title %></a>
+  &nbsp;&nbsp;| &nbsp; <a href=<%= "/admin/posts/#{post.id}/edit" %>><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a> &nbsp;&nbsp;| &nbsp; <button type="submit" form="delete-post-<%= post.id %>"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></br>
+<% end %>
+
+</br>
+<a href="/admin/posts/new"><span class="glyphicon glyphicon-plus" aria-hidden="true"> New</a>

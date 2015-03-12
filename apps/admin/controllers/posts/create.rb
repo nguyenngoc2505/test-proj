@@ -4,8 +4,9 @@ module Admin::Controllers::Posts
 
     def call(params)
       @post = Post.new params[:post]
-      PostRepository.persist @post
-      redirect_to "/posts/#{@post.id}"
+      post = PostRepository.persist @post
+
+      redirect_to "/posts/#{post.id}"
     end
   end
 end
