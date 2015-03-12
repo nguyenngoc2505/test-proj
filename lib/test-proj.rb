@@ -34,5 +34,15 @@ Lotus::Model.configure do
       attribute :name, String
       attribute :age, Integer
     end
+
+    collection :posts do
+      entity     Post
+      repository PostRepository
+    
+      attribute :id,   Integer
+      attribute :title, String
+      attribute :content, String
+      attribute :user_id, Integer
+    end
   end
 end.load!

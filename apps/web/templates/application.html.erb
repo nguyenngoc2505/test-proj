@@ -2,8 +2,22 @@
 <html>
   <head>
     <title>TestProj</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css" />
   </head>
   <body>
-    <%= yield %>
+    <div id="wrap">
+      <div id="header">
+        <ul class="nav nav-pills">
+          <li class=<%= "#{view.locals[:params].env['REQUEST_PATH'] == '/' ? 'active' : nil}" %>><a href="/" role= "presentation">Home</a></li>
+          <li class=<%= "#{view.locals[:params].env['REQUEST_PATH'] == '/posts' ? 'active' : nil}" %>><a href="/posts" role= "presentation">Posts</a></li>
+        </ul>
+      </div>
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,9 +1,27 @@
 <!doctype HTML>
 <html>
   <head>
-    <title>TestProj</title>
+    <title>Admin TestProj</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="/admin/javascripts/redactor.js"></script>
+    <link rel="stylesheet" type="text/css" href="/admin/stylesheets/redactor.css" />
+    <link rel="stylesheet" type="text/css" href="/admin/stylesheets/main.css" />
   </head>
   <body>
-    <%= yield %>
+    <div id="wrap">
+      <div id="header">
+        <ul class="nav nav-pills">
+          <li class=<%= "#{view.locals[:params].env['REQUEST_PATH'] == '/admin' ? 'active' : nil}" %>><a href="/admin" role= "presentation">Home</a></li>
+          <li class=<%= "#{view.locals[:params].env['REQUEST_PATH'] == 'admin/posts' ? 'active' : nil}" %>><a href="/admin/posts" role= "presentation">Posts</a></li>
+        </ul>
+      </div>
+      <div id="main">
+        <%= yield %>
+      </div>
+    </div>
   </body>
 </html>

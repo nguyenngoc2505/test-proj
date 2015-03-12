@@ -1,0 +1,7 @@
+<h1>List Posts</h1>
+<% posts.each.with_index(1) do |post, index| %>
+  <%= index %>. &nbsp;&nbsp;&nbsp;<a href=<%= "/posts/#{post.id}" %>><%= post.title %></a></br>
+<% end %>
+
+</br>
+
