@@ -8,3 +8,6 @@ module ApiV1::Controllers::Posts
     end
   end
 end
+
+# To call Api
+# curl -i -H "Accept: application/json" http://0.0.0.0:2300/api/v1/posts/:id
